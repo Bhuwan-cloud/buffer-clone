@@ -1,6 +1,6 @@
 <h1>Sign up form </h1>
     <% if @user.errors.any? %>
-        <div class="alert alert-danger">
+        <div id="fls-msg" class="alert alert-danger">
             <ul>
                 <% @user.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
@@ -29,3 +29,9 @@
         </div>
 
     <% end %>
+
+  <script>
+        setTimeout(function() {
+        document.getElementById('fls-msg').style.display = 'none';
+        }, 10000); // hide the flash message after 3 seconds
+    </script>

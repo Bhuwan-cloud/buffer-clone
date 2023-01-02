@@ -7,7 +7,8 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(root_path, notice: "This Post was successfully created.") }
+        session[:user_id] = @user.id
+        format.html { redirect_to(root_path, notice: "Account has successfully been created") }
       else
         format.html { render(:new, status: :unprocessable_entity) }
       end
