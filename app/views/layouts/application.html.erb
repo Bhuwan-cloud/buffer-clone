@@ -15,8 +15,9 @@
 
 <main>
  <body>
-    <%= render(partial: "shared/navbar") %>
-    <div class="container my-2">
+  <%= render(partial: "shared/flash") %>
+    <div class="container">
+      <%= render(partial: "shared/navbar") %>
             <%= yield %>
       </div>
   </body>
