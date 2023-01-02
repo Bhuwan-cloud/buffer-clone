@@ -15,12 +15,20 @@
 
 <main>
  <body>
-  <%= render(partial: "shared/flash") %>
+    <div id="flash-message" >
+      <%= render(partial: "shared/flash") %>
+    </div>
     <div class="container">
       <%= render(partial: "shared/navbar") %>
             <%= yield %>
       </div>
   </body>
 </main>
+
+  <script>
+    setTimeout(function() {
+      document.getElementById('flash-message').style.display = 'none';
+    }, 5000); // hide the flash message after 3 seconds
+  </script>
   
 </html>
