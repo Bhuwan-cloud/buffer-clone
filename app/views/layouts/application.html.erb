@@ -14,11 +14,12 @@
   </head>
 
 <main>
- <div class="container my-2">
-    <body>
-        <%= yield %>
-    </body>
-  </div>
+ <body>
+    <%= render(partial: "shared/navbar") %>
+    <div class="container my-2">
+            <%= yield %>
+      </div>
+  </body>
 </main>
   
 </html>
